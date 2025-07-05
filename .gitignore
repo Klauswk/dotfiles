@@ -1,0 +1,5 @@
+.coffed_history
+*.swo
+*.swp
+tags
+target
