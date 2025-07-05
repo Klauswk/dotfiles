@@ -3,7 +3,7 @@
 " expandtab tells if vim should use whitespace instead of tab
 set tabstop=2 shiftwidth=2 expandtab
 " Add the number to the left panel
-set number
+set relativenumber 
 " share the clipboard with the system
 set clipboard=unnamedplus
 " syntax on
@@ -20,4 +20,7 @@ set autoindent
 set cursorline
 "  
 filetype plugin on
+
+set grepprg=git\ --no-pager\ grep\ --no-color\ -n\ $*
+set grepformat=%f:%l:%m,%m\ %f\ match%ts,%f
 
