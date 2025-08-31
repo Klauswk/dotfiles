@@ -4,6 +4,7 @@
 set tabstop=2 shiftwidth=2 expandtab
 " Add the number to the left panel
 set relativenumber 
+set number
 " share the clipboard with the system
 set clipboard=unnamedplus
 " syntax on
@@ -21,6 +22,12 @@ set cursorline
 "  
 filetype plugin on
 
-set grepprg=git\ --no-pager\ grep\ --no-color\ -n\ $*
-set grepformat=%f:%l:%m,%m\ %f\ match%ts,%f
+set grepprg=git\ --no-pager\ grep\ --no-color\ -n\ --column\ $*
+set grepformat=%f:%l:%c:%m,%m\ %f\ match%ts,%f
+nmap gb :bnext<CR>
+nmap gB :bprev<CR>
+nmap qb :cnext<CR>
+nmap qB :cprev<CR>
+nmap <C-x><C-f> :Explore<CR>
+nmap <C-x><C-b> :ls<CR>:b<Space>
 
