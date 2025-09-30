@@ -1,13 +1,15 @@
 #!/bin/sh
 
+set -xe
+
 mkdir -p ~/opt/
 cp git-sl ~/opt/
 cp git-status-ls.sh ~/opt/
 
 if [[ "$(uname -s)" =~ ^MSYS_NT.* ]]; then
-  cp .gitignore ~/
-  cp .vimrc ~/
+	cp .gitignore ~/
+	cp .vimrc ~/
 else
-    ln -s .gitignore ~/.gitignore
-    ln -s .vimrc ~/.vimrc
+	ln -s $(pwd)/.gitignore ~/.gitignore
+	ln -s $(pwd)/.vimrc ~/.vimrc
 fi
