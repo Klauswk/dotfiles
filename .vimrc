@@ -30,4 +30,3 @@ nmap qb :cnext<CR>
 nmap qB :cprev<CR>
 nmap <C-x><C-f> :Explore<CR>
 nmap <C-x><C-b> :ls<CR>:b<Space>
-
