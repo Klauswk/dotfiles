@@ -26,7 +26,6 @@ set grepprg=git\ --no-pager\ grep\ --no-color\ -n\ --column\ $*
 set grepformat=%f:%l:%c:%m,%m\ %f\ match%ts,%f
 nmap gb :bnext<CR>
 nmap gB :bprev<CR>
-nmap qb :cnext<CR>
-nmap qB :cprev<CR>
 nmap <C-x><C-f> :Explore<CR>
 nmap <C-x><C-b> :ls<CR>:b<Space>
+
