@@ -6,26 +6,34 @@ set tabstop=2 shiftwidth=2 expandtab
 set relativenumber 
 set number
 " share the clipboard with the system
-set clipboard=unnamedplus
+if has("linux")
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+end
+
 " syntax on
 syntax on
 " Enable auto completion menu after pressing TAB.
 set path+=**
 " Make wildmenu behave like similar to Bash completion.
 set wildmenu
-" When in insert mode, press jj to escape
-inoremap jj <esc>
 " Automatically indent new files
 set autoindent
-" Add a dash in the current line
-set cursorline
-"  
+
 filetype plugin on
+
+runtime ftplugin/man.vim
+" Remap Man plugin to use K instead of Leader + K
+nmap K :call dist#man#PreGetPage(0)<CR>
 
 set grepprg=git\ --no-pager\ grep\ --no-color\ -n\ --column\ $*
 set grepformat=%f:%l:%c:%m,%m\ %f\ match%ts,%f
 nmap gb :bnext<CR>
 nmap gB :bprev<CR>
 nmap <C-x><C-f> :Explore<CR>
-nmap <C-x><C-b> :ls<CR>:b<Space>
+" nmap <C-x><C-b> :ls<CR>:b<Space>
+" I can't live without this :(
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
 
